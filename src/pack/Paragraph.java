@@ -1,15 +1,15 @@
 package pack;
 
-public class Paragraph {
-    public String text;
+public class Paragraph implements Element {
+    private String name;
 
-    public Paragraph(String x)
-    {
-        this.text=x;
+    Paragraph(String name) {
+        this.name=name;
     }
 
-    public String toString(){
-        return "Paragraph:" +  this.text;
 
+    @Override
+    public void pint() {
+        System.out.println("Paragraph with name: " + this.name);
     }
 }

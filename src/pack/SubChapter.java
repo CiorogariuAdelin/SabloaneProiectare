@@ -1,32 +1,61 @@
 package pack;
 
-import java.awt.*;
 import java.util.ArrayList;
 
-public class SubChapter {
-    public ArrayList<Table> tabs=new ArrayList<Table>();
-    public ArrayList<Paragraph> paragraphs=new ArrayList<Paragraph>();
-    public ArrayList<image> images=new ArrayList<image>();
-    public String name;
+public class SubChapter  {
+    private String name;
 
-    public SubChapter(String n)
-    {
-        this.name=n;
+    private ArrayList<Paragraph> paragraphs = new ArrayList<>();
+    private ArrayList<Table> tables = new ArrayList<>();
+    private ArrayList<Image> images = new ArrayList<>();
+
+
+    SubChapter(String name){
+        this.name=name;
     }
-    public void createTable(String z)
-    {   Table x=new Table(z);
-        tabs.add(x);
+
+    public void createNewParagraph(String name){
+        paragraphs.add(new Paragraph(name));
     }
-    public void createParagraph(String z)
-    {   Paragraph x=new Paragraph(z);
-        paragraphs.add(x);
+    public void createNewImage(String name){
+        images.add(new Image(name));
     }
-    public void createImage(String z)
-    {   image x=new image(z);
-        images.add(x);
+    public void createNewTable(String name){
+        tables.add(new Table(name));
     }
-    public String toString(){
-        return "SubChapter:"+this.name+" "+tabs+ " "+images+" "+paragraphs;
+
+    public void print(){
+        System.out.println("Subchapter: " + this.name);
+        printImages();
+        printParagraphs();
+        printTables();
     }
+
+    private void printParagraphs(){
+        for(Paragraph i : this.paragraphs)
+        {
+            i.pint();
+        }
+    }
+    private void printTables(){
+        for(Table i : this.tables)
+        {
+            i.pint();
+        }
+    }
+    private void printImages(){
+        for(Image i: images)
+        {
+            i.pint();
+        }
+    }
+
+
+
+
+
+
+
+
 
 }

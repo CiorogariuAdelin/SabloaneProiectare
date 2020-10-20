@@ -1,15 +1,14 @@
 package pack;
+public class Table implements Element {
 
-public class Table {
-    public String title;
+    private String name;
 
-    public Table(String x)
-    {
-        this.title=x;
+    Table(String name) {
+        this.name=name;
     }
 
-    public String toString(){
-        return "Table:" +  this.title;
-
+    @Override
+    public void pint() {
+        System.out.println("Table with name: " + this.name);
     }
 }
