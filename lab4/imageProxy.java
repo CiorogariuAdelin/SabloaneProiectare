@@ -4,16 +4,14 @@ import java.util.concurrent.TimeUnit;
 
 public class imageProxy implements Element {
     Image Name;
+    String name;
     imageProxy(String name) {
-        Name=new Image(name);
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        this.name=name;
     }
     @Override
     public void pint() {
-            System.out.println("Image with name: " + this.Name.imageName);
+        if (Name==null)
+        Name=new Image(name);
+           Name.pint();
     }
 }
