@@ -20,7 +20,7 @@ public class Chapter {
         return subChapters.get(index);
     }
 
-    public void print(){
+    public void pint(){
         System.out.println("Chapter name: " + this.name);
         printSubChapters();
     }

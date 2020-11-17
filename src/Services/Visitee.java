@@ -1,5 +1,5 @@
 package Services;
 
 public interface Visitee {
-    public void accept(Visitor visitor);
+    public void sectionvisit(Visitor visitor);
 }

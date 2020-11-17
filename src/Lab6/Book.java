@@ -5,7 +5,7 @@ import Services.Visitor;
 
 import java.util.ArrayList;
 
-public class Book implements Element, Visitee
+public class Book implements Element
 {
     protected String title;
 
@@ -55,6 +55,15 @@ public class Book implements Element, Visitee
 
     @Override
     public void accept(Visitor visitor) {
+        visitor.visit(this);
+        for (Element i:content){
+            i.accept(visitor);
+        }
+    }
+
+    @Override
+    public void tofile() {
 
     }
+
 }

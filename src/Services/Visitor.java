@@ -1,9 +1,6 @@
 package Services;
 
-import Lab6.Image;
-import Lab6.Paragraph;
-import Lab6.Table;
-import Lab6.imageProxy;
+import Lab6.*;
 
 public interface Visitor {
     public abstract void visit(Image image);
@@ -11,4 +8,7 @@ public interface Visitor {
     public abstract void visit(Paragraph paragraph);
     public abstract void visit(Table table);
 
+    public abstract void visit(Section section);
+
+    public abstract void visit(Book book);
 }
